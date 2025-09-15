@@ -101,3 +101,20 @@ function toggleProfessionContainer() {
 window.addEventListener('scroll', toggleProfessionContainer);
 window.addEventListener('resize', toggleProfessionContainer);
 document.addEventListener('DOMContentLoaded', toggleProfessionContainer);
+
+// Completely hide spinning animation when Home section is not visible at all
+function toggleProfessionContainer() {
+  const home = document.getElementById('home');
+  const prof = document.querySelector('.profession-container');
+  if (!prof || !home) return;
+  const rect = home.getBoundingClientRect();
+  // Show only if Home section is at least partially visible
+  if (rect.bottom > 80 && rect.top < window.innerHeight - 120) {
+    prof.style.display = "block";
+  } else {
+    prof.style.display = "none";
+  }
+}
+window.addEventListener('scroll', toggleProfessionContainer);
+window.addEventListener('resize', toggleProfessionContainer);
+document.addEventListener('DOMContentLoaded', toggleProfessionContainer);
