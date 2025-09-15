@@ -82,3 +82,22 @@ if (dlBtn) {
     html2pdf().from(element).set(opt).save();
   });
 }
+
+// Show spinning animation ONLY on Home section (mobile too)
+function toggleProfessionContainer() {
+  const home = document.getElementById('home');
+  const prof = document.querySelector('.profession-container');
+  if (!prof || !home) return;
+  // Get Home section boundaries
+  const rect = home.getBoundingClientRect();
+  // If Home is visible at the top, show; else, hide
+  if (rect.top <= 80 && rect.bottom > 120) {
+    prof.style.display = "block";
+  } else {
+    prof.style.display = "none";
+  }
+}
+// On scroll and on load
+window.addEventListener('scroll', toggleProfessionContainer);
+window.addEventListener('resize', toggleProfessionContainer);
+document.addEventListener('DOMContentLoaded', toggleProfessionContainer);
