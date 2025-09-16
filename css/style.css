@@ -297,3 +297,40 @@ section { min-height: auto; }
     display: none !important;
   }
 }
+
+/* Mobile Skills Strip styling for mobile view */
+.mobile-skills-strip {
+  display: none;
+}
+@media (max-width: 768px) {
+  .profession-container {
+    display: none !important;
+  }
+  .mobile-skills-strip {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 12px 0 0 0;
+    width: 100%;
+    min-height: 40px;
+    background: #f8faf6;
+    border-radius: 16px;
+    padding: 8px 0 5px 0;
+    box-shadow: 0 2px 12px 0 rgba(136, 191, 74, 0.07);
+  }
+  .mobile-skill {
+    display: inline-block;
+    font-size: 1.14rem;
+    color: var(--main-color, #92c024);
+    font-weight: 700;
+    background: #fff;
+    padding: 4px 13px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(51, 102, 0, 0.06);
+    letter-spacing: .03em;
+    transition: background .15s;
+  }
+  .mobile-skill:not(:last-child) { margin-right: 6px; }
+  .home-content { margin-bottom: 0.3rem !important; }
+}
