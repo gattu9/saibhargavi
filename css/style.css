@@ -250,3 +250,50 @@ section { min-height: auto; }
     display: none !important;
   }
 }
+
+/* On mobile, stack Home content and spinning wheel, center everything, and shrink wheel */
+@media (max-width: 768px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 70vh;
+    padding-top: 110px;
+    padding-bottom: 0;
+    overflow: visible;
+  }
+  .home-content {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    z-index: 2;
+  }
+  .profession-container {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 200px !important;
+    margin: 0 auto 0.5rem auto !important;
+    overflow: visible !important;
+    z-index: 1 !important;
+    background: #fff;
+    border-radius: 0 0 30px 30px;
+  }
+  .profession-box,
+  .profession-box .circle {
+    width: 180px !important;
+    height: 180px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    border-width: 2px !important;
+  }
+  .profession {
+    padding: 7px !important;
+  }
+  .profession-container .overlay {
+    display: none !important;
+  }
+}
